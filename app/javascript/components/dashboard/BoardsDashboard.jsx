@@ -13,11 +13,6 @@ const BoardsDashboard = props => {
     />
   ));
 
-  boards.push(
-    <ToggleableCreateBoardTile 
-      key={'new-board'}
-    />
-  );
 
   return (
     <main className="dashboard">
@@ -31,6 +26,9 @@ const BoardsDashboard = props => {
 
         <ul className="dashboard-board-tiles">
           {boards}
+          <ToggleableCreateBoardTile 
+            key={'new-board'}
+          />
         </ul>
       </section>
     </main>
