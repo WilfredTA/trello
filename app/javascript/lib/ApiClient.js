@@ -25,6 +25,12 @@ const apiClient = {
       .then(callback)
       .catch(logError);
   },
+  getBoard: function(callback, url) {
+    return axios.get(url)
+      .then(unwrapData)
+      .then(callback)
+      .catch(logError);
+  },
   createBoard: function(board, callback) {
     return axios.post(routes.CREATE_BOARD_URL, { board })
       .then(unwrapData)
