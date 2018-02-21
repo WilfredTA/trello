@@ -5,6 +5,10 @@ export function fetchBoardsRequest() {
   return { type: types.FETCH_BOARDS_REQUEST };
 }
 
+export function fetchBoardRequest() {
+  return { type: types.CREATE_BOARD_REQUEST };
+}
+
 export function fetchBoardSuccess(board) {
   return { type: types.FETCH_BOARD_SUCCESS, board };
 }
@@ -19,6 +23,13 @@ export function createBoardRequest() {
 
 export function createBoardSuccess(board) {
   return { type: types.CREATE_BOARD_SUCCESS, board: board };
+}
+
+export function fetchBoard(id) {
+  return function(dispatch) {
+    dispatch(fetchBoardRequest());
+    apiClient.getBoard(id, board => dispatch(fetchBoardSuccess(board)))
+  }
 }
 
 export function fetchBoards() {

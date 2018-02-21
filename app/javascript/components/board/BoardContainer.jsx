@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Board from './Board';
 import apiClient from '../../lib/ApiClient';
-import { fetchBoardSuccess } from '../../actions/BoardActions';
+import * as actions from '../../actions/BoardActions';
 
 class BoardContainer extends React.Component {
   static contextTypes = {
@@ -13,12 +13,15 @@ class BoardContainer extends React.Component {
   componentDidMount() {
     const store = this.context.store;
     this.unsubscribe = store.subscribe(() => { this.forceUpdate() })
-    apiClient.getBoard(board => store.dispatch(fetchBoardSuccess(board), '/api'+this.props.match.url))
+    const id = this.props.match.params.id;
+    store.dispatch(actions.fetchBoard(id));
   }
 
   getBoard = () => {
     const store = this.context.store;
-    return store.getState().board;
+    return store.getState().boards.find((board) => {
+      return board.id === Number(this.props.match.params.id);
+    });
   }
 
   componentWillUnmount() {
@@ -28,17 +31,13 @@ class BoardContainer extends React.Component {
       // render a <Board /> component
       // <Board /> will get props from BoardContainer as props
     const boardInfo = this.getBoard();
-    // const toRender = boardInfo ? <Board message="hi" boardInfo={boardInfo}/> : null;
-    let toRender;
+    // debugger;
+    // const toRender = boardInfo ? (<Board message="hi" boardInfo={boardInfo}/>) : null;
     if (boardInfo) {
-      toRender = (<Board message="hi" boardInfo={boardInfo}/>);
+      return (<Board message="hi" boardInfo={boardInfo}/>);
     } else {
       return null;
     }
-
-    return (
-      {toRender}
-    )
   }
 
 

@@ -1,1 +1,1 @@
-json.board @board
+json.merge! @board.attributes

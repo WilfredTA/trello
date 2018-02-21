@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 
 class Board extends React.Component {
 
-
-
     render() {
         return(
             <div>
