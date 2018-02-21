@@ -25,6 +25,10 @@ export function createBoardSuccess(board) {
   return { type: types.CREATE_BOARD_SUCCESS, board: board };
 }
 
+export function fetchLists(boardId) {
+  return { type: types.FETCH_LISTS_REQUEST, boardId }
+}
+
 export function fetchBoard(id) {
   return function(dispatch) {
     dispatch(fetchBoardRequest());

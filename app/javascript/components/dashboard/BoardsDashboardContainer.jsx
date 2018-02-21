@@ -20,7 +20,6 @@ class BoardsDashboardContainer extends React.Component {
     this.unsubscribe();
   }
 
-
   allBoards = () => {
     const store = this.context.store;
     return store.getState().boards;
