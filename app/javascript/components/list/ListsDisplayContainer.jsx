@@ -17,7 +17,6 @@ class ListsDisplayContainer extends React.Component {
 
 
   render() {
-
     return (
       <div>
         <ListsDisplay lists={this.props.lists} />

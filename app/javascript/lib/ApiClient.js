@@ -29,7 +29,7 @@ const apiClient = {
     return axios.get(routes.boardUrl(id))
       .then(unwrapData)
       .then((data) => {
-        console.log(data);
+        console.log(data, 'from server');
         return data;
       })
       .then(callback)

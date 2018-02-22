@@ -4,12 +4,14 @@ import ListReducer from '../reducers/ListsReducer';
 
 import boardsReducer from '../reducers/BoardsReducer';
 import statusReducer from '../reducers/StatusReducer';
-
+import listsReducer from '../reducers/ListsReducer';
 function reducer(state = {}, action) {
-  return {
+  const curr_state = {
     boards: boardsReducer(state.boards, action),
-    status: statusReducer(state.status, action)
+    status: statusReducer(state.status, action),
+    lists: listsReducer(state.lists, action)
   };
+  return curr_state
 }
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -3,8 +3,14 @@ import PropTypes from 'prop-types';
 
 class ListsDisplay extends React.Component {
   render() {
-    
-    return (<div>hi</div>);
+    const lists = this.props.lists.map((list) => {
+      return (
+        <div>
+          {list.title}
+        </div>
+      )
+    })
+    return (<div>{lists}</div>);
   }
 }
 
