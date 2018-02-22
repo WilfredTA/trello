@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import Board from './Board';
 import apiClient from '../../lib/ApiClient';
 import * as actions from '../../actions/BoardActions';
+import ListsDisplayContainer from '../list/ListsDisplayContainer';
+import ToggleableCreateListTile from '../list/ToggleableCreateListTile';
 
 class BoardContainer extends React.Component {
   static contextTypes = {
@@ -20,6 +22,7 @@ class BoardContainer extends React.Component {
   getBoard = () => {
     const store = this.context.store;
     return store.getState().boards.find((board) => {
+      console.log(board)
       return board.id === Number(this.props.match.params.id);
     });
   }
@@ -34,7 +37,12 @@ class BoardContainer extends React.Component {
     // debugger;
     // const toRender = boardInfo ? (<Board message="hi" boardInfo={boardInfo}/>) : null;
     if (boardInfo) {
-      return (<Board message="hi" boardInfo={boardInfo}/>);
+      return (
+        <div>
+          <Board message="" boardInfo={boardInfo}/>
+          <ListsDisplayContainer lists={boardInfo.lists}  />
+        </div>
+    );
     } else {
       return null;
     }

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class ListsDisplay extends React.Component {
   render() {
-    return (<div>Hi</div>);
+    
+    return (<div>hi</div>);
   }
 }
 

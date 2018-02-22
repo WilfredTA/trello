@@ -1,5 +1,6 @@
 import { createStore as cs, applyMiddleware, compose } from 'redux';
 import ReduxThunk from 'redux-thunk';
+import ListReducer from '../reducers/ListsReducer';
 
 import boardsReducer from '../reducers/BoardsReducer';
 import statusReducer from '../reducers/StatusReducer';

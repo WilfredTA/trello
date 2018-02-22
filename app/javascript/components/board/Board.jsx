@@ -21,9 +21,8 @@ class Board extends React.Component {
               <div className="subscribed">
                 <i className="sub-icon sm-icon"></i>Subscribed</div>
             </header>
-            <ToggleableCreateListTile />
+
           </div>
-          <ListDisplayContainer />
         </div>
       )
     }
