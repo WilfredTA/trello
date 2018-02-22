@@ -20,6 +20,8 @@ class Api::BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @lists = @board.lists
+    puts @lists
   end
 
   private

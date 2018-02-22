@@ -28,6 +28,10 @@ const apiClient = {
   getBoard: function(id, callback) {
     return axios.get(routes.boardUrl(id))
       .then(unwrapData)
+      .then((data) => {
+        console.log(data);
+        return data;
+      })
       .then(callback)
       .catch(logError);
   },
@@ -41,9 +45,8 @@ const apiClient = {
     
     return axios.post(routes.CREATE_LIST_URL, {list})
       .then(unwrapData)
-      .then((some_obj) => {console.log("response data:", some_obj)})
-      //.then(callback)
-      .then(logError)
+      .then(callback)
+      .catch(logError)
   }
 };
 

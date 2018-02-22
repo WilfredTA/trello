@@ -25,7 +25,6 @@ class BoardContainer extends React.Component {
   getBoard = () => {
     const store = this.context.store;
     return store.getState().boards.find((board) => {
-      console.log(board)
       return board.id === Number(this.props.match.params.id);
     });
   }

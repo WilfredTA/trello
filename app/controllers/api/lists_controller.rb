@@ -1,8 +1,6 @@
 class Api::ListsController < ApplicationController
 
   def create
-    puts params
-    @board = Board.find(params[:list][:board_id])
     @list = List.new(list_params)
     if @list.save
       render :create, status: :created
