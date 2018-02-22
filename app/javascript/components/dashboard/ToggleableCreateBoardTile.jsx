@@ -1,7 +1,6 @@
 import React from 'react';
 
 import CreateBoardTile from './CreateBoardTile';
-import CreateBoardTileForm from './CreateBoardTileForm';
 import CreateBoardTileFormContainer from './CreateBoardTileFormContainer';
 
 class ToggleableCreateBoardTile extends React.Component {
