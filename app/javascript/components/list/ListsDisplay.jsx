@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ListContainer from './ListContainer';
+
 class ListsDisplay extends React.Component {
   render() {
-    const lists = this.props.lists.map((list) => {
+    const listContainers = this.props.lists.map((list) => {
       return (
-        <div>
-          {list.title}
-        </div>
-      )
+        <ListContainer
+          key={list.id}
+          list={list}
+        />
+      );
     })
-    return (<div>{lists}</div>);
+    return (<div>{listContainers}</div>);
   }
 }
 
