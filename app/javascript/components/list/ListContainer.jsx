@@ -22,7 +22,7 @@ class ListContainer extends React.Component {
 
   }
 
-  onChange = (e) => {
+  handleChange = (e) => {
     this.setState({
       listTitle: e.target.value,
     });
@@ -32,9 +32,9 @@ class ListContainer extends React.Component {
     if (this.state.showForm) {
       return (
         <ListEditForm
-          handleChange={this.onChange}
+          handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          listTitle={this.props.list.title}
+          listTitle={this.state.listTitle}
         />
       );
     } else {
