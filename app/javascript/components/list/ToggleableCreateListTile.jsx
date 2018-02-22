@@ -35,7 +35,8 @@ class ToggleableCreateListTile extends React.Component {
           title={this.state.title} 
           showForm={this.state.showForm} 
           handleChange={this.handleChange}
-          handleCloseClick={this.handleCloseClick}/>
+          handleCloseClick={this.handleCloseClick}
+          boardId={this.props.boardId}/>
       )
     } else {
       return (

@@ -12,6 +12,9 @@ class BoardContainer extends React.Component {
     store: PropTypes.object.isRequired
   }
 
+  getId(){
+    return Number(this.props.match.params.id)
+  }
   componentDidMount() {
     const store = this.context.store;
     this.unsubscribe = store.subscribe(() => { this.forceUpdate() })
@@ -40,7 +43,7 @@ class BoardContainer extends React.Component {
       return (
         <div>
           <Board message="" boardInfo={boardInfo}/>
-          <ListsDisplayContainer lists={boardInfo.lists}  />
+          <ListsDisplayContainer lists={boardInfo.lists} boardId={this.getId()} />
         </div>
     );
     } else {

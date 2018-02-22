@@ -32,7 +32,7 @@ export default class CreateListTileForm extends React.Component {
             className="button"
             value="Save"
             ref="submitButton"
-           // onClick={this.props.onSubmit}
+            onClick={this.props.onSubmit}
           />
           <i 
             className="x-icon icon"

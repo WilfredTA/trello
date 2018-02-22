@@ -21,7 +21,7 @@ class ListsDisplayContainer extends React.Component {
     return (
       <div>
         <ListsDisplay lists={this.props.lists} />
-        <ToggleableCreateListTile />
+        <ToggleableCreateListTile boardId={this.props.boardId}/>
       </div>
     );
   }

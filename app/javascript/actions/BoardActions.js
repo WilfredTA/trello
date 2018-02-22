@@ -53,3 +53,16 @@ export function createBoard(board, callback) {
     })
   }
 }
+
+export function createListSuccess(list) {
+  return {type: "CREATE_LIST_SUCCESS", list: list}
+}
+
+
+export function createList(list) {
+  return function(dispatch) {
+    apiClient.createList(list, newList => {
+      dispatch(createListSuccess(newList))
+    })
+  }
+}
