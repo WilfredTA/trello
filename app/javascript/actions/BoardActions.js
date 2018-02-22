@@ -66,3 +66,14 @@ export function createList(list) {
     })
   }
 }
+
+export function updateListSuccess(list) {
+  return {type: "UPDATE_LIST_SUCCESS", list}
+}
+export function updateList(updateData) {
+  return function(dispatch) {
+    apiClient.updateList(updateData, newList => {
+      dispatch(updateListSuccess(newList))
+    })
+  }
+}

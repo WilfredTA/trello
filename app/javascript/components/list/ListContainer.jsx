@@ -3,12 +3,17 @@ import PropTypes from 'prop-types';
 
 import List from './List';
 import ListEditForm from './ListEditForm';
+import * as actions from '../../actions/BoardActions';
 
 class ListContainer extends React.Component {
   state = {
     showForm: false,
     listTitle: this.props.list.title,
   }
+
+  static contextTypes = {
+    store: PropTypes.object.isRequired
+  };
 
   handleClick = (e) => {
     e.preventDefault();
@@ -19,7 +24,9 @@ class ListContainer extends React.Component {
   }
 
   handleSubmit = (e) => {
-
+    const store = this.context.store;
+    e.preventDefault();
+    store.dispatch(actions.updateList({id: this.props.list.id, title: this.state.listTitle}))
   }
 
   handleChange = (e) => {

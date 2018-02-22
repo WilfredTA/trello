@@ -6,6 +6,7 @@ class ListEditForm extends React.Component {
     return (
       <form>
         <input
+          onBlur={this.props.handleSubmit}
           onChange={this.props.handleChange}
           type="text"
           value={this.props.listTitle}

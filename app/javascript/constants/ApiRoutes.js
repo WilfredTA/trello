@@ -4,3 +4,6 @@ export const boardUrl = function(id) {
   return `/api/boards/${id}`;
 }
 export const CREATE_LIST_URL = '/api/lists';
+export const listUrl = function(id) {
+  return `/api/lists/${id}`;
+}

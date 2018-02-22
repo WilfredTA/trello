@@ -13,6 +13,14 @@ class Api::ListsController < ApplicationController
     render 'api/shared/error', status: :not_found
   end
 
+  def update
+    @list = List.find(params[:id])
+    
+    p params[:title]
+    @list.update_attribute(:title, params[:title])
+    render :update
+  end
+
   private
 
   def list_params
