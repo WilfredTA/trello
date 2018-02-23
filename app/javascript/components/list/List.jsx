@@ -2,9 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class List extends React.Component {
-  // onClick = (e) => {
-  //   e.preventDefault()
-  // }
 
   render() {
     return (

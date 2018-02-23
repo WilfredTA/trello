@@ -35,6 +35,10 @@ class ListContainer extends React.Component {
     });
   }
 
+  handleDrop = (e) => {
+    debugger;
+  }
+
   render() {
     if (this.state.showForm) {
       return (
@@ -49,6 +53,7 @@ class ListContainer extends React.Component {
         <List
           list={this.props.list}
           handleClick={this.handleClick}
+          onDrop={this.handleDrop}
         />
       );
     }

@@ -9,7 +9,16 @@ class ListsDisplay extends React.Component {
 
   componentDidMount() {
     const container = ReactDOM.findDOMNode(this);
-    dragula([container]);
+    let options = {};
+    const drake = dragula([container], options)
+      .on('drop', function(el) {
+        debugger;
+        el.dispatchEvent(new Event('drop', { 'bubbles': true }));
+      });
+
+    drake.on('drop', (el) => {
+      debugger;
+    });
   }
 
   static contextTypes = {
