@@ -15,12 +15,18 @@ class ListsDisplayContainer extends React.Component {
     super(props);
   }
 
-
   render() {
     return (
-      <div>
-        <ListsDisplay lists={this.props.lists} />
-        <ToggleableCreateListTile boardId={this.props.boardId}/>
+      <div className="list-container">
+        <div className="existing-lists">
+          <ListsDisplay // Could not use className on this component?
+            lists={this.props.lists}
+          />
+        </div>
+        <ToggleableCreateListTile
+          className="new-list"
+          boardId={this.props.boardId}
+        />
       </div>
     );
   }

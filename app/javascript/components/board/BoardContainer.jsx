@@ -35,17 +35,17 @@ class BoardContainer extends React.Component {
     this.unsubscribe();
   }
   render() {
-      // render a <Board /> component
-      // <Board /> will get props from BoardContainer as props
     const boardInfo = this.getBoard();
 
-    // debugger;
-    // const toRender = boardInfo ? (<Board message="hi" boardInfo={boardInfo}/>) : null;
     if (boardInfo) {
       return (
         <div>
-          <Board message="" boardInfo={boardInfo}/>
-          <ListsDisplayContainer lists={boardInfo.lists} boardId={this.getId()} />
+          <Board boardInfo={boardInfo}/>
+          <ListsDisplayContainer
+            boardId={this.getId()}
+            className="list-container"
+            lists={boardInfo.lists}
+          />
         </div>
     );
     } else {
